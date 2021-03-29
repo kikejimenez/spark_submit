@@ -2,8 +2,10 @@ import org.scalatest.FunSuite
 
 class DataTests extends  FunSuite{
   test("Source To Refined Data Structure"){
-    val wd = os.pwd.toString+ "/src/test/data"
-    val data = Data(wd,"TableTest")
+    val configFile = s"configFile=${(os.pwd/"src"/"test"/"data").toString + "/TableTest.json"}"
+    val discoveryDir = s"discoveryDir=discovery"
+    val args = Args(Array(discoveryDir,configFile))
+    val data = Data(args)
     assert(data.uniqueKeys == "1uniqueKeyTest, 2uniqueKeyTest")
     assert(data.nonUniqueKeys == "nonUniqueKeyTest")
   }

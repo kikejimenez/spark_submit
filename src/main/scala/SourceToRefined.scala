@@ -19,13 +19,13 @@ object SourceToRefined {
     }
 
     val args  = Args(cliArgs)
-    val data = Data(args.parentDirectory.get,args.tableName.get)
+    val data = Data(args)
     val spark =  getSparkSession(args.master, "my spark job")
 
 
-    val refined = spark.sql(args.queryRefined.getOrElse(data.defaultQuery));
+    val refined = spark.sql(args.queryRefined.getOrElse(data.defaultQuery))
 
-    refined.write.mode("overwrite").parquet(data.refinedParquet);
+    refined.write.mode("overwrite").parquet(args.refinedDir.get)
     spark.close
 
 
