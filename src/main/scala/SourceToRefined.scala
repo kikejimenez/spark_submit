@@ -25,6 +25,7 @@ object SourceToRefined {
 
     val refined = spark.sql(args.queryRefined.getOrElse(data.defaultQuery))
 
+    //refined.write.saveAsTable("refined.call")
     refined.write.mode("overwrite").parquet(args.refinedDir.get)
     spark.close
 

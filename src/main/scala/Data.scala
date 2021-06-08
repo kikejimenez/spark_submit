@@ -25,5 +25,4 @@ case class Data(args: Args) {
                   FROM  parquet.`${args.discoveryDir.get}`
          )
          """.trim();
-
 }
