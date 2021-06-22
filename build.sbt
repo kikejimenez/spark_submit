@@ -12,7 +12,8 @@ libraryDependencies ++= Seq(
   "com.lihaoyi" %% "upickle"  % "0.7.4",
   "com.lihaoyi" %% "os-lib" % "0.2.9",
   "com.typesafe.play" %% "play-json" %   "2.7.4",
- "org.scalatest" %% "scalatest" % "2.2.4" % Test
+ "org.scalatest" %% "scalatest" % "2.2.4" % Test,
+"com.fasterxml.jackson.module" %% "jackson-module-scala" % "2.11.4"
 )
 
 

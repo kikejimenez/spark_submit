@@ -2,7 +2,7 @@
 import org.apache.spark.sql._
 import scala.language.postfixOps
 
-object SourceToRefined {
+object DiscoveryToRefinedOneJob {
 
   def main(cliArgs: Array[String]): Unit = {
     def getSparkSession(
