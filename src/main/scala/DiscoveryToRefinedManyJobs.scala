@@ -1,6 +1,7 @@
-import org.apache.spark.sql.SparkSession
+import org.apache.spark.sql._
+import scala.language.postfixOps
 
-class DiscoveryToRefinedManyJobs {
+object DiscoveryToRefinedManyJobs {
 
   def main(cliArgs: Array[String]): Unit = {
     def getSparkSession(
@@ -22,6 +23,7 @@ class DiscoveryToRefinedManyJobs {
 
     data.dataArr.par.foreach(x =>
         x("tableName").str match {
+
           case "call" =>  {val call_refined = spark.sql(data.call_query(x))
             call_refined.write.mode("overwrite").parquet(x("refinedPath").str)
           }

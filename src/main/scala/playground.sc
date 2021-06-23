@@ -4,8 +4,10 @@ import ujson.Value.Value
 import scala.collection.mutable.ArrayBuffer
 import scala.language.postfixOps
 import scala.sys.process._
+import  DiscoveryToRefinedOneJob
+import DiscoveryToRefinedManyJobs
 
-case class Data(configFile: String) {
+case class DData(configFile: String) {
 
   var jsonString =""
   try {

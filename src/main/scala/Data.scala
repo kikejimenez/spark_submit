@@ -44,9 +44,9 @@ case class Data(configFile: String) {
     s"""
       | SELECT *
       |  FROM (
-      |      SELECT *, max(record_date) OVER (PARTITION BY contact_id) AS max_record_date
+      |      SELECT *, max(disposition_code) OVER (PARTITION BY skill_no) AS max_disposition_code
       |        FROM  parquet.`${config("discoveryPath").str}`)s
-      |  WHERE s.max_record_date = s.record_date
+      |  WHERE s.max_disposition_code = s.disposition_code
       |""".stripMargin
   }
 

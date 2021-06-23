@@ -19,7 +19,7 @@ object DiscoveryToRefinedOneJob {
     }
 
     val args  = Args(cliArgs)
-    val data = Data(args)
+    /* val data = Data(args)
     val spark =  getSparkSession(args.master, "my spark job")
 
 
@@ -29,7 +29,7 @@ object DiscoveryToRefinedOneJob {
     refined.write.mode("overwrite").parquet(args.refinedDir.get)
     spark.close
 
-
+*/
   }
 
 }
