@@ -6,7 +6,7 @@ class DiscoveryToRefinedManyJobsTests extends FunSuite{
   val configFile = s"configFile=${(os.pwd/"src"/"test"/"data").toString + "/TableTestLocal.json"}"
   println(configFile)
    val args= Array(s"master=local[*]",configFile)
-  //discoveryToRefined.main(args)
+  discoveryToRefined.main(args)
    // assert(true)
   //os.remove.all(os.pwd/"src"/"test"/"data"/"refined"/"skill")
 }}
